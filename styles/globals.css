@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  text-align: center;
+  background-color: rgba(218, 32, 147, 0.8);
+}
+
+main {
+  max-width: 500px;
+  margin: 0 auto;
+  color: white;
+}
+
+section {
+  display: grid;
+  place-items: center;
+  padding: 30px 10px;
+}
+
+h1 {
+  text-shadow: 1px 2px rgb(0 0 0);
+}
+
+h3 {
+  text-shadow: 1px 2px rgb(0 0 0);
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+/* .ipsum {
+  text-transform: capitalize;
+} */
+
+.ipsum > p {
+  text-transform: capitalize;
+}
+
+.no-p-tag {
+  white-space: pre-line;
+}
