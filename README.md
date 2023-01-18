@@ -1,4 +1,7 @@
-# Cheesy Bacon Ipsum generator using Next.js + Tailwind CSS
+## Cheesy Bacon Ipsum generator using Next.js + Tailwind CSS
+
+![image](https://user-images.githubusercontent.com/739061/213307557-44c18d69-5801-4f66-af47-c3f97646d4fb.png)
+
 
 ## Deploy your own
 
