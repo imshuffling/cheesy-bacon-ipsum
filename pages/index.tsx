@@ -34,7 +34,7 @@ const Home: NextPage = () => {
   return (
     <div className='flex min-h-screen flex-col items-center justify-center'>
       <Head>
-        <title>🧀🥓 CheesyBacon Ipsum Generator </title>
+        <title>Cheese n Bacon Ipsum Generator</title>
         <link rel='icon' href='/favicon.ico' />
         <link
           href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900'
@@ -45,7 +45,7 @@ const Home: NextPage = () => {
 
       <main className='flex w-full max-w-5xl flex-1 flex-col items-center md:justify-center p-4 md:p-12 text-center'>
         <h1 className='text-4xl md:text-6xl font-bold'>
-          🧀🥓 CheesyBacon Ipsum Generator
+          Cheese n Bacon Ipsum Generator
         </h1>
 
         <div className='grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5 py-10 items-center md:items-end'>
