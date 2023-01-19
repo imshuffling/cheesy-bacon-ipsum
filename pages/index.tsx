@@ -63,6 +63,7 @@ const Home: NextPage = () => {
                 id='count'
                 inputMode='decimal'
                 min='1'
+                step='1'
                 value={count}
                 onChange={(e) => {
                   const val: any = e.target.value;
