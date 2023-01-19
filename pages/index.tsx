@@ -61,6 +61,7 @@ const Home: NextPage = () => {
                 type='number'
                 name='count'
                 id='count'
+                inputMode='decimal'
                 value={count}
                 onChange={(e) => {
                   const val: any = e.target.value;
