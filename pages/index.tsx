@@ -1,8 +1,8 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Image from 'next/image';
 import { useState } from 'react';
 import { loremIpsum } from 'lorem-ipsum';
+import Footer from '../components/Footer';
 import cheeses from '../cheeses';
 import lorem from '../lorem';
 
@@ -32,9 +32,9 @@ const Home: NextPage = () => {
   }
 
   return (
-    <div className='flex min-h-screen flex-col items-center justify-center py-2'>
+    <div className='flex min-h-screen flex-col items-center justify-center'>
       <Head>
-        <title>Cheesy Bacon Ipsum Generator</title>
+        <title>🧀🥓 CheesyBacon Ipsum Generator </title>
         <link rel='icon' href='/favicon.ico' />
         <link
           href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900'
@@ -43,14 +43,16 @@ const Home: NextPage = () => {
         />
       </Head>
 
-      <main className='flex w-full max-w-5xl flex-1 flex-col items-center justify-center p-12 text-center'>
-        <h1 className='text-4xl font-bold'>Cheesy Bacon Ipsum Generator</h1>
+      <main className='flex w-full max-w-5xl flex-1 flex-col items-center md:justify-center p-4 md:p-12 text-center'>
+        <h1 className='text-4xl md:text-6xl font-bold'>
+          🧀🥓 CheesyBacon Ipsum Generator
+        </h1>
 
-        <div className='grid grid-cols-4 gap-5 py-10 items-end'>
+        <div className='grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5 py-10 items-center md:items-end'>
           <div>
             <label
               htmlFor='count'
-              className='block text-sm font-medium text-white'
+              className='block text-sm font-medium text-white text-left'
             >
               Count
             </label>
@@ -72,7 +74,7 @@ const Home: NextPage = () => {
           <div>
             <label
               htmlFor='units'
-              className='block text-sm font-medium text-white'
+              className='block text-sm font-medium text-white text-left'
             >
               Units
             </label>
@@ -83,9 +85,9 @@ const Home: NextPage = () => {
               defaultValue='paragraphs'
               onChange={(e) => setUnit(e.target.value)}
             >
-              <option value='paragraphs'>paragraphs</option>
-              <option value='sentences'>sentences</option>
-              <option value='words'>words</option>
+              <option value='paragraphs'>Paragraph(s)</option>
+              <option value='sentences'>Sentence(s)</option>
+              <option value='words'>Word(s)</option>
             </select>
           </div>
 
@@ -104,7 +106,7 @@ const Home: NextPage = () => {
                   }}
                 />
               </div>
-              <div className='ml-3 text-sm'>
+              <div className='ml-3 text-sm text-left'>
                 <label htmlFor='tags' className='font-medium text-white'>
                   Show Paragraph tags
                 </label>
@@ -141,17 +143,7 @@ const Home: NextPage = () => {
         </section>
       </main>
 
-      <footer className='flex h-24 w-full items-center justify-center border-t text-white'>
-        <a
-          className='flex items-center justify-center gap-2'
-          href='https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Powered by{' '}
-          <Image src='/vercel.svg' alt='Vercel Logo' width={72} height={16} />
-        </a>
-      </footer>
+      <Footer />
     </div>
   );
 };

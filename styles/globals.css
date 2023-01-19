@@ -28,13 +28,12 @@ h3 {
   text-shadow: 1px 2px rgb(0 0 0);
 }
 
-p {
-  margin-bottom: 10px;
+p,
+.no-p-tag {
+  font-size: 22px;
+  white-space: pre-line;
+  margin-bottom: 24px;
 }
-
-/* .ipsum {
-  text-transform: capitalize;
-} */
 
 .ipsum > p {
   text-transform: capitalize;
