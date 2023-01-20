@@ -47,11 +47,6 @@ const Home: NextPage = () => {
       <Head>
         <title>Cheese n Bacon Ipsum Generator</title>
         <link rel='icon' href='/favicon.ico' />
-        <link
-          href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900'
-          rel='stylesheet'
-          type='text/css'
-        />
       </Head>
 
       <main className='flex w-full max-w-5xl flex-1 flex-col items-center md:justify-center p-4 md:p-12 text-center'>
@@ -71,7 +66,7 @@ const Home: NextPage = () => {
             </label>
             <div className='mt-1'>
               <input
-                type='number'
+                type='text'
                 name='count'
                 id='count'
                 inputMode='decimal'
@@ -79,7 +74,7 @@ const Home: NextPage = () => {
                 step='1'
                 value={count}
                 onChange={(e) => {
-                  const val: any = e.target.value;
+                  const val: any = e.target.value.replace(/\D/, '');
                   if (!isNaN(val)) setCount(Number(val));
                 }}
                 className='block w-full rounded-md border-gray-300 text-gray-700 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm'
