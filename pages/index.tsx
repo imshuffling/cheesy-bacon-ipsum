@@ -2,6 +2,8 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import { useState } from 'react';
 import { loremIpsum } from 'lorem-ipsum';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
+import { BsClipboardCheck } from 'react-icons/bs';
 import Footer from '../components/Footer';
 import cheeses from '../cheeses';
 import lorem from '../lorem';
@@ -11,6 +13,7 @@ const Home: NextPage = () => {
   const [count, setCount] = useState<number>(2);
   const [unit, setUnit] = useState<string>('paragraphs');
   const [showPTag, setShowPTag] = useState<boolean>(false);
+  const [isCopied, setIsCopied] = useState<boolean>(false);
 
   const words = [...cheeses, ...lorem];
 
@@ -30,6 +33,13 @@ const Home: NextPage = () => {
   function getNewIpsum() {
     setIpsum(data.toLowerCase());
   }
+
+  const onCopyText = () => {
+    setIsCopied(true);
+    setTimeout(() => {
+      setIsCopied(false);
+    }, 1000);
+  };
 
   return (
     <div className='flex min-h-screen flex-col items-center justify-center'>
@@ -109,7 +119,7 @@ const Home: NextPage = () => {
                   }}
                 />
               </div>
-              <div className='ml-3 text-sm text-left'>
+              <div className='ml-2 text-sm text-left'>
                 <label htmlFor='tags' className='font-medium text-white'>
                   Show Paragraph tags
                 </label>
@@ -119,13 +129,27 @@ const Home: NextPage = () => {
 
           <div>
             <button
-              className='text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-6 py-3.5 text-center'
+              className='text-white text-xl bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-6 py-3.5 text-center'
               onClick={getNewIpsum}
             >
-              Cheesy bacon ipsum!
+              {ipsum ? 'Re-generate!' : 'Generate!'}
             </button>
           </div>
         </div>
+
+        {ipsum && (
+          <CopyToClipboard text={ipsum} onCopy={onCopyText}>
+            <div className='copy-area relative flex justify-center'>
+              <button
+                type='button'
+                className='focus:outline-none text-gray-900 bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900 inline-flex'
+              >
+                <BsClipboardCheck className='mr-2 -ml-1 w-4 h-4' />
+                {isCopied ? 'Copied!' : 'Copy Text'}
+              </button>
+            </div>
+          </CopyToClipboard>
+        )}
 
         <section>
           {ipsum && (
