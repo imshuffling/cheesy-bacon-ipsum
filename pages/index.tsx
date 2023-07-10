@@ -42,6 +42,8 @@ const Home: NextPage = () => {
     }, 1000);
   };
 
+  const s = count > 1 && 's';
+
   return (
     <div className='flex min-h-screen flex-col items-center justify-center'>
       <Head>
@@ -96,9 +98,9 @@ const Home: NextPage = () => {
               defaultValue='paragraphs'
               onChange={(e) => setUnit(e.target.value)}
             >
-              <option value='paragraphs'>Paragraph(s)</option>
-              <option value='sentences'>Sentence(s)</option>
-              <option value='words'>Word(s)</option>
+              <option value='paragraphs'>Paragraph{s}</option>
+              <option value='sentences'>Sentence{s}</option>
+              <option value='words'>Word{s}</option>
             </select>
           </div>
 
